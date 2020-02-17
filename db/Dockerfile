@@ -1,5 +1,2 @@
-FROM postgres:alpine
-
-ARG INIT_DIR=/docker-entrypoint-initdb.d
-RUN mkdir -p $INIT_DIR
-COPY ./init/ $INIT_DIR
+FROM postgres:11.0-alpine
+COPY ./init/ /docker-entrypoint-initdb.d/
